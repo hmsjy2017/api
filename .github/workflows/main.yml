@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Run a multi-line script
+        run: |
+          curl -v https://api.day.app/${{ secrets.ID }}/Hi/Hello
